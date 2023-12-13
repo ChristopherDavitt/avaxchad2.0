@@ -11,7 +11,7 @@ const CopyToClipboardButton = ({ message }: { message: string}) => {
     
     return (
         <>
-          <IconButton size="sm" onClick={handleClick} color="neutral">
+          <IconButton aria-label="copy text" size="sm" onClick={handleClick} color="neutral">
             <ContentPasteIcon />
           </IconButton>
           <Snackbar

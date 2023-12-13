@@ -7,6 +7,7 @@ import { ArrowForward } from '@mui/icons-material';
 import CopyToClipboardButton from './components/CopyToClipboard';
 import Header from './components/Header';
 import { Tweet } from 'react-tweet';
+import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -26,9 +27,11 @@ export default function Home() {
         <Typography fontSize="lg" textColor="text.secondary" lineHeight="lg">
           Its about time <strong>$CHAD</strong> comes to <strong>AVAX</strong>. Lets show those jeet chains what we&apos;re made of!
         </Typography>
-        <Button color="primary" size="lg" endDecorator={<ArrowForward />}>
-          Buy on Trader Joe
-        </Button>
+        <Link href="#">
+          <Button color="primary" size="lg" endDecorator={<ArrowForward />}>
+            Buy on Trader Joe
+          </Button>
+        </Link>
         <Box display="flex" alignItems="center">
           <Typography>
             Token:{' '}
@@ -52,7 +55,7 @@ export default function Home() {
       <Typography textAlign="center" fontWeight={600}>Available on</Typography>
       <div className={styles.grid}>
         <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
+          href="#"
           className={styles.card}
           target="_blank"
           rel="noopener noreferrer"
@@ -60,14 +63,14 @@ export default function Home() {
           <Image
             className={styles.logo}
             src="/avalanche.png"
-            alt="avax"
+            alt="avax logo"
             priority
             width={200}
             height={40}
             />
         </a>
         <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
+          href="#"
           className={styles.card}
           target="_blank"
           rel="noopener noreferrer"
@@ -75,14 +78,14 @@ export default function Home() {
           <Image
             className={styles.logo}
             src="/dexscreener.png"
-            alt="avax"
+            alt="dexscreener logo"
             priority
             width={200}
             height={40}
             />
         </a>
         <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
+          href="#"
           className={styles.card}
           target="_blank"
           rel="noopener noreferrer"
@@ -90,14 +93,14 @@ export default function Home() {
           <Image
             className={styles.logo}
             src="/dextools.png"
-            alt="avax"
+            alt="dextools logo"
             priority
             width={140}
             height={40}
             />
         </a>
         <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
+          href="#"
           className={styles.card}
           target="_blank"
           rel="noopener noreferrer"
@@ -105,7 +108,7 @@ export default function Home() {
           <Image
             className={styles.logo}
             src="/joe.png"
-            alt="avax"
+            alt="trader joe logo"
             priority
             width={146}
             height={40}
