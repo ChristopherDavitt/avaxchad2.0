@@ -8,6 +8,7 @@ import CopyToClipboardButton from './components/CopyToClipboard';
 import Header from './components/Header';
 import { Tweet } from 'react-tweet';
 import Link from 'next/link';
+import uncx from '../../public/uncx.png';
 
 export default function Home() {
   return (
@@ -67,7 +68,7 @@ export default function Home() {
             priority
             width={200}
             height={40}
-            />
+          />
         </a>
         <a
           href="#"
@@ -122,7 +123,7 @@ export default function Home() {
         display: 'flex',
         flexDirection: 'column-reverse',
         alignItems: 'center',
-        py: 10,
+        py: 2,
         gap: 4,
         [theme.breakpoints.up(834)]: {
           flexDirection: 'row',
@@ -137,6 +138,7 @@ export default function Home() {
         sx={(theme) => ({
           minWidth: 300,
           alignSelf: 'stretch',
+          alignItems: 'center',
           [theme.breakpoints.up(834)]: {
             alignSelf: 'initial',
             flexGrow: 1,
@@ -146,12 +148,42 @@ export default function Home() {
           flexBasis: '50%',
         })}
       >
-        <div className='light'>
+        <Box 
+          sx={(theme) => ({
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            [theme.breakpoints.up(834)]: {
+              alignItems: 'flex-start',
+              textAlign: 'initial',
+              justifyContent: 'flex-start',
+            },
+            [`& .${typographyClasses.root}`]: {
+              textWrap: 'balance',
+            },
+          })} 
+          className='light'
+        >
           <Tweet id='1590420350009233408' />
-        </div>
-        <div className='light'>
+        </Box>
+        <Box 
+          sx={(theme) => ({
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            [theme.breakpoints.up(834)]: {
+              alignItems: 'flex-start',
+              textAlign: 'initial',
+              justifyContent: 'flex-start',
+            },
+            [`& .${typographyClasses.root}`]: {
+              textWrap: 'balance',
+            },
+          })} 
+          className='light'
+        >
           <Tweet id='1588191874715623426' />
-        </div>
+        </Box>
        </Box>
       <Box
         sx={(theme) => ({
@@ -191,21 +223,35 @@ export default function Home() {
         >
           Ownership Renounced
         </Typography>
-        <code className={styles.code}>0x000000000000dfwsfsdf<span><CopyToClipboardButton message='0x000000000000dfwsfsdf' /></span></code>
-        <Typography
-          level="h3"
-          fontWeight="xl"
-        >
-          100% Liquidity Locked
-        </Typography>
-        <code className={styles.code}>3 Months</code>
+        <Box display="flex" alignItems="center">
+          <code className={styles.code}>0x000000000000dfwsfsdf</code>
+          <CopyToClipboardButton message='0x000000000000dfwsfsdf' />
+        </Box>
+          <Typography
+            level="h3"
+            fontWeight="xl"
+          >
+            100% Liquidity Locked
+          </Typography>
+        <Box display="flex" alignItems="center" gap={2}>
+          <code className={styles.code}>6 Months</code>
+          <Link href={`https://app.uncx.network/amm/traderjoe-v1/pair/${process.env.NEXT_PUBLIC_POOL_CONTRACT}`}>
+            <Image width={32} height={32} alt="uncx logo" src={uncx} />
+          </Link>
+        </Box>
         <Typography
           level="h3"
           fontWeight="xl"
         >
           Buy / Sell Tax
         </Typography>
-        <code className={styles.code}>2%</code>
+        <code className={styles.code}>0%</code>
+        <Typography
+          level="h3"
+          fontWeight="xl"
+        >
+          Fair Launch
+        </Typography>
         </Box>
       </Container>
       <p>NFA. $CHAD is a meme coin with no intrinsic value or expectation of financial return.</p>
